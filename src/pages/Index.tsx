@@ -8,11 +8,18 @@ export default function Index() {
   const slides = [
     {
       image: 'https://cdn.poehali.dev/files/9ef0e945-8ae3-498c-9abc-4cefe55a1726.jpg',
-      text: 'Милая помнишь эту фотку она мне очень нравится, ты у меня такая милая на самом деле))'
+      text: 'Милая помнишь эту фотку она мне очень нравится, ты у меня такая милая на самом деле))',
+      hasImage: true
     },
     {
       image: 'https://cdn.poehali.dev/files/26686ddb-78f7-44cf-878e-1bc4ab3a201b.jpg',
-      text: 'А эту помнишь ??)'
+      text: 'А эту помнишь ??)',
+      hasImage: true
+    },
+    {
+      image: '',
+      text: 'Милая моя спасибо тебе за эти девять месяцев с тобой, я не о чем не пожалел, люблю тебя очень сильно тыковка)',
+      hasImage: false
     }
   ];
 
@@ -40,29 +47,51 @@ export default function Index() {
 
       <div className="relative z-10 w-full max-w-4xl">
         <div className="animate-scale-in flex flex-col items-center gap-6">
-          <div className="relative w-64 h-64 md:w-96 md:h-96 rounded-3xl overflow-hidden border-4 border-pink-300 shadow-2xl">
-            <img 
-              src={slides[currentSlide].image}
-              alt="Фото"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          
-          <div className="relative w-72 h-56 md:w-96 md:h-72 flex items-center justify-center animate-float">
-            <svg viewBox="0 0 100 90" className="w-full h-full absolute inset-0">
-              <path
-                d="M50,85 C50,85 15,60 15,35 C15,25 20,15 30,15 C40,15 45,20 50,30 C55,20 60,15 70,15 C80,15 85,25 85,35 C85,60 50,85 50,85 Z"
-                fill="#ffc0cb"
-                stroke="#ff69b4"
-                strokeWidth="2"
-              />
-            </svg>
-            <div className="relative z-10 text-center px-8 py-4">
-              <p className="text-sm md:text-base leading-relaxed text-pink-900">
-                {slides[currentSlide].text}
-              </p>
+          {slides[currentSlide].hasImage ? (
+            <>
+              <div className="relative w-64 h-64 md:w-96 md:h-96 rounded-3xl overflow-hidden border-4 border-pink-300 shadow-2xl">
+                <img 
+                  src={slides[currentSlide].image}
+                  alt="Фото"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              <div className="relative w-72 h-56 md:w-96 md:h-72 flex items-center justify-center animate-float">
+                <svg viewBox="0 0 100 90" className="w-full h-full absolute inset-0">
+                  <path
+                    d="M50,85 C50,85 15,60 15,35 C15,25 20,15 30,15 C40,15 45,20 50,30 C55,20 60,15 70,15 C80,15 85,25 85,35 C85,60 50,85 50,85 Z"
+                    fill="#ffc0cb"
+                    stroke="#ff69b4"
+                    strokeWidth="2"
+                  />
+                </svg>
+                <div className="relative z-10 text-center px-8 py-4">
+                  <p className="text-sm md:text-base leading-relaxed text-pink-900">
+                    {slides[currentSlide].text}
+                  </p>
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="relative w-full max-w-2xl">
+              <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 border-4 border-pink-300 shadow-2xl">
+                <div className="text-center space-y-6">
+                  <div className="inline-block animate-float">
+                    <Icon name="Heart" size={72} className="text-pink-500" />
+                  </div>
+                  <p className="text-xl md:text-3xl leading-relaxed text-gray-800 font-semibold">
+                    {slides[currentSlide].text}
+                  </p>
+                  <div className="flex justify-center gap-2 pt-4">
+                    <Icon name="Sparkles" size={24} className="text-pink-400" />
+                    <Icon name="Heart" size={24} className="text-pink-500" />
+                    <Icon name="Sparkles" size={24} className="text-pink-400" />
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="flex gap-4 items-center mt-4">
             <Button
