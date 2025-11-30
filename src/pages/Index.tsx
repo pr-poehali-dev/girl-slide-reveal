@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
+import Snowflakes from '@/components/Snowflakes';
 
 export default function Index() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -75,18 +76,30 @@ export default function Index() {
             </>
           ) : (
             <div className="relative w-full max-w-2xl">
-              <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 border-4 border-pink-300 shadow-2xl">
-                <div className="text-center space-y-6">
+              <Snowflakes />
+              <div className="relative bg-gradient-to-br from-red-50 to-green-50 backdrop-blur-xl rounded-3xl p-8 md:p-12 border-4 border-red-400 shadow-2xl overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-green-600/20 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-red-600/20 to-transparent"></div>
+                
+                <div className="absolute top-4 left-4 text-4xl">🎄</div>
+                <div className="absolute top-4 right-4 text-4xl">🎄</div>
+                <div className="absolute bottom-4 left-4 text-4xl">🎁</div>
+                <div className="absolute bottom-4 right-4 text-4xl">🎁</div>
+                
+                <div className="absolute top-8 left-1/4 text-2xl animate-float">⭐</div>
+                <div className="absolute top-12 right-1/4 text-2xl animate-float" style={{ animationDelay: '0.5s' }}>✨</div>
+                
+                <div className="relative text-center space-y-6">
                   <div className="inline-block animate-float">
-                    <Icon name="Heart" size={72} className="text-pink-500" />
+                    <Icon name="Heart" size={72} className="text-red-500" />
                   </div>
                   <p className="text-xl md:text-3xl leading-relaxed text-gray-800 font-semibold">
                     {slides[currentSlide].text}
                   </p>
                   <div className="flex justify-center gap-2 pt-4">
-                    <Icon name="Sparkles" size={24} className="text-pink-400" />
-                    <Icon name="Heart" size={24} className="text-pink-500" />
-                    <Icon name="Sparkles" size={24} className="text-pink-400" />
+                    <span className="text-2xl">❄️</span>
+                    <Icon name="Heart" size={24} className="text-red-500" />
+                    <span className="text-2xl">❄️</span>
                   </div>
                 </div>
               </div>
