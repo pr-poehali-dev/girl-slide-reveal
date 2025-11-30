@@ -22,7 +22,7 @@ export default function Index() {
 
       <Card className="relative z-10 max-w-2xl w-full p-8 md:p-12 bg-white/80 backdrop-blur-xl border-2 border-pink-200/50 shadow-2xl animate-scale-in">
         <div className="text-center space-y-6">
-          <div className="flex justify-center mb-6 animate-scale-in">
+          <div className="flex justify-center mb-4 animate-scale-in">
             <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-pink-300 shadow-xl">
               <img 
                 src="https://cdn.poehali.dev/files/9ef0e945-8ae3-498c-9abc-4cefe55a1726.jpg" 
@@ -30,6 +30,15 @@ export default function Index() {
                 className="w-full h-full object-cover"
               />
             </div>
+          </div>
+
+          <div className="mb-6 animate-fade-in" style={{ animationDelay: '0.2s', opacity: 0 }}>
+            <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-2">
+              Милая помнишь это фото???
+            </p>
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+              Оно мне очень нравится, и поэтому решил сюда его добавить ты у меня такая милая на самом деле))
+            </p>
           </div>
 
           <div className="inline-block animate-float">
