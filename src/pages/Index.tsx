@@ -13,13 +13,29 @@ export default function Index() {
         <div className="absolute inset-0 bg-gradient-to-b from-pink-100/40 via-purple-100/30 to-pink-50/40 backdrop-blur-[2px]"></div>
       </div>
 
-      <div className="relative z-10 animate-scale-in">
+      <div className="relative z-10 animate-scale-in flex flex-col items-center gap-6">
         <div className="relative w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-pink-300 shadow-2xl">
           <img 
             src="https://cdn.poehali.dev/files/9ef0e945-8ae3-498c-9abc-4cefe55a1726.jpg" 
             alt="Фото"
             className="w-full h-full object-cover"
           />
+        </div>
+        
+        <div className="relative w-48 h-40 md:w-64 md:h-52 flex items-center justify-center animate-float">
+          <svg viewBox="0 0 100 90" className="w-full h-full absolute inset-0">
+            <path
+              d="M50,85 C50,85 15,60 15,35 C15,25 20,15 30,15 C40,15 45,20 50,30 C55,20 60,15 70,15 C80,15 85,25 85,35 C85,60 50,85 50,85 Z"
+              fill="#ffc0cb"
+              stroke="#ff69b4"
+              strokeWidth="2"
+            />
+          </svg>
+          <div className="relative z-10 text-center px-4">
+            <p className="text-sm md:text-base font-semibold text-pink-900">
+              Текст
+            </p>
+          </div>
         </div>
       </div>
     </div>
