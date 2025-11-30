@@ -22,7 +22,7 @@ export default function Index() {
           />
         </div>
         
-        <div className="relative w-48 h-40 md:w-64 md:h-52 flex items-center justify-center animate-float">
+        <div className="relative w-72 h-56 md:w-96 md:h-72 flex items-center justify-center animate-float">
           <svg viewBox="0 0 100 90" className="w-full h-full absolute inset-0">
             <path
               d="M50,85 C50,85 15,60 15,35 C15,25 20,15 30,15 C40,15 45,20 50,30 C55,20 60,15 70,15 C80,15 85,25 85,35 C85,60 50,85 50,85 Z"
@@ -31,9 +31,9 @@ export default function Index() {
               strokeWidth="2"
             />
           </svg>
-          <div className="relative z-10 text-center px-4">
-            <p className="text-sm md:text-base font-semibold text-pink-900">
-              Текст
+          <div className="relative z-10 text-center px-8 py-4">
+            <p className="text-sm md:text-base leading-relaxed text-pink-900">
+              Милая помнишь эту фотку она мне очень нравится, ты у меня такая милая на самом деле))
             </p>
           </div>
         </div>
